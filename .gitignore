@@ -1,0 +1,7 @@
+# 인텔리 설정파일
+/.idea
+/out
+study.iml
+
+# 유저 테스트파일
+/test
