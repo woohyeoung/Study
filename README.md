@@ -1,4 +1,4 @@
 # Study
 `Algorithm study`
 
->1주차 - 재귀
+>11월 1주차 - 재귀 + 함수
