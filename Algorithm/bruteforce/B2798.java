@@ -10,12 +10,32 @@ public class B2798 {
 		BufferedReader br;
 		try {
 		    br = new BufferedReader(new InputStreamReader(System.in));
-			int testcase = Integer.parseInt(br.readLine());
 			StringTokenizer stz = new StringTokenizer(br.readLine());
-			int[] ary = new int[testcase];
+			int testcase = Integer.parseInt(stz.nextToken());
+			int compareValue = Integer.parseInt(stz.nextToken());
+			int result = 0;
+			stz = new StringTokenizer(br.readLine());
+			int[] arr = new int[testcase];
 			for (int i = 0; i < testcase; i++) {
-				ary[i] = Integer.parseInt(stz.nextToken());
+				arr[i] = Integer.parseInt(stz.nextToken());
 			}
+			Outer: {
+				for (int i = 0; i < testcase -2; i++) {
+					for (int j = i + 1; j < testcase -1; j++) {
+						for (int k = j + 1; k < testcase; k++) {
+							int temp = arr[i] + arr[j] + arr[k];
+							if (temp > compareValue) continue;
+							if (temp > result) {
+								result = temp;
+							}
+							if (result == compareValue) {
+								break Outer;
+							}
+						}
+					}
+				}
+			}
+			System.out.println(result);
 		} catch (IOException e) { e.printStackTrace(); }
 	}
 }
