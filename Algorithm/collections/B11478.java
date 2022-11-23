@@ -19,13 +19,10 @@ public class B11478 {
 		Set<String> set = new HashSet<>();
 		try {
 		    br = new BufferedReader(new InputStreamReader(System.in));
-		    String[] ary = br.readLine().split("");
-			for (int i = 0; i < ary.length; i++) {
-				String str = ary[i];
-				set.add(str);
-				for (int j = i +1; j < ary.length; j++) {
-					str += ary[j];
-					set.add(str);
+		    String str = br.readLine();
+			for (int i = 1; i <= str.length(); i++) {
+				for (int j = 0; j <= str.length() - i; j++) {
+					set.add(str.substring(j, j+i));
 				}
 			}
 			System.out.println(set.size());
