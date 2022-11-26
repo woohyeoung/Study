@@ -1,4 +1,4 @@
-package Algorithm.bfsdfs;
+package Algorithm.backtracking;
 
 import java.io.BufferedReader;
 import java.io.IOException;
